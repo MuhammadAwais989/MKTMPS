@@ -65,7 +65,6 @@ export default function AboutSection() {
       ),
     },
   ];
-
   return (
     <section className="relative bg-white  pt-40 overflow-hidden -translate-y-14">
       {/* Background animated images */}
