@@ -4,6 +4,8 @@ import { FaEnvelope, FaLock, FaEye, FaEyeSlash, FaSignInAlt } from 'react-icons/
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase/firebaseConfig';
 import { notification } from 'antd'; // Ant Design notification import
+import { useNavigate } from 'react-router-dom';
+
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -11,6 +13,9 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
+
+
+  const navigate = useNavigate();
 
   // Notification function
   const showNotification = (type, message, description = '') => {
@@ -61,8 +66,8 @@ const Login = () => {
       
       // Redirect to homework page after successful login
       setTimeout(() => {
-        window.location.href = '/homework';
-      }, 1500);
+  navigate('/homework');
+}, 500);
       
     } catch (error) {
       console.error('Login error:', error);
