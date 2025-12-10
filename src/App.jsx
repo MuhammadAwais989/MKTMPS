@@ -28,7 +28,7 @@ import AcademicsStrategies from "./components/pages/Academics/AcademicsStrategie
 import AboutCurriculum from "./components/pages/About/AboutCurriculum";
 import HomeWork from "./components/pages/HomeWork";
 import Login from "./components/pages/Login";
-import ContactUs from "./components/pages/contactUs";
+import ContactUs from "./components/pages/ContactUs";
 
 function App() {
   return (

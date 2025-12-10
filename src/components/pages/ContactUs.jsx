@@ -119,7 +119,7 @@ Message: ${form.message}
               </div>
 
               {/* RIGHT SIDE INFO */}
-              <div className="bg-gradient-to-b from-blue-600 to-indigo-700 text-white p-10">
+              <div className="bg-linear-to-b from-blue-600 to-indigo-700 text-white p-10">
                 <h2 className="text-2xl font-bold mb-8">Contact Information</h2>
                 
                 <div className="space-y-8">
