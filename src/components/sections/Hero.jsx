@@ -280,7 +280,7 @@ const Hero = () => {
   return (
     <section 
       ref={heroRef}
-      className="relative -translate-y-23 pt-45 w-full h-screen max-sm:h-[90vh] overflow-hidden hero"
+      className="relative -translate-y-22 pt-45 w-full h-screen max-sm:h-[90vh] overflow-hidden hero"
     >
 
       {/* Background Video with Glow Effect */}

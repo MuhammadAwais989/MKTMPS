@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from "framer-motion";
 import schoolBook from '../../assets/images/6.png';
 import labTube from '../../assets/images/7.png';
 import IdeaBulb from '../../assets/images/8.png';
@@ -6,6 +7,7 @@ import Books from '../../assets/images/9.png';
 import lamp from '../../assets/images/10.png';
 
 export default function AboutSection() {
+
   const items = [
     {
       title: 'MISSION',
@@ -65,62 +67,39 @@ export default function AboutSection() {
       ),
     },
   ];
+
   return (
-    <section className="relative bg-white  pt-40 overflow-hidden -translate-y-14">
-      {/* Background animated images */}
+    <section className="relative bg-white pt-30 overflow-hidden -translate-y-14">
+
+      {/* Background floating images */}
       <div className="absolute inset-0 z-0">
-        {/* Position the images around the section */}
-        <img 
-          src={schoolBook} 
-          alt="School Book" 
-          className="absolute top-10 left-5 w-32 h-32 opacity-20 animate-float"
-          style={{ animationDelay: '0s' }}
-        />
-        <img 
-          src={labTube} 
-          alt="Lab Tube" 
-          className="absolute top-1/4 right-10 w-28 h-28 opacity-20 animate-float"
-          style={{ animationDelay: '1s' }}
-        />
-        <img 
-          src={IdeaBulb} 
-          alt="Idea Bulb" 
-          className="absolute bottom-20 left-10 w-36 h-36 opacity-20 animate-float"
-          style={{ animationDelay: '2s' }}
-        />
-        <img 
-          src={Books} 
-          alt="Books" 
-          className="absolute bottom-10 right-20 w-40 h-40 opacity-15 animate-float"
-          style={{ animationDelay: '3s' }}
-        />
-        <img 
-          src={lamp} 
-          alt="Lamp" 
-          className="absolute top-1/3 left-1/4 w-24 h-24 opacity-20 animate-float"
-          style={{ animationDelay: '4s' }}
-        />
+        <img src={schoolBook} className="absolute top-10 left-5 w-32 h-32 opacity-20 animate-float" />
+        <img src={labTube} className="absolute top-1/4 right-10 w-28 h-28 opacity-20 animate-float" />
+        <img src={IdeaBulb} className="absolute bottom-20 left-10 w-36 h-36 opacity-20 animate-float" />
+        <img src={Books} className="absolute bottom-10 right-20 w-40 h-40 opacity-15 animate-float" />
+        <img src={lamp} className="absolute top-1/3 left-1/4 w-24 h-24 opacity-20 animate-float" />
       </div>
 
-      {/* Add CSS for animation in your global CSS or style tag */}
       <style jsx>{`
         @keyframes float {
-          0%, 100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
         }
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
       `}</style>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12">
+
           {items.map((it, idx) => (
-            <div key={idx} className="flex items-start gap-6">
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: idx * 0.1 }}
+              viewport={{ once: true }}
+              className="flex items-start gap-6"
+            >
               <div className="shrink-0">
                 <div className="p-2 rounded-md bg-white shadow-sm border border-red-100">
                   {it.icon}
@@ -128,11 +107,16 @@ export default function AboutSection() {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold uppercase tracking-wide text-slate-800 mb-3">{it.title}</h3>
-                <p className="text-sm text-slate-500 leading-relaxed max-w-xl">{it.text}</p>
+                <h3 className="text-xl font-semibold uppercase tracking-wide text-slate-800 mb-3">
+                  {it.title}
+                </h3>
+                <p className="text-sm text-slate-500 leading-relaxed max-w-xl">
+                  {it.text}
+                </p>
               </div>
-            </div>
+            </motion.div>
           ))}
+
         </div>
 
         <div className="border-t pt-8 border-slate-100"></div>

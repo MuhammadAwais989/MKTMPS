@@ -1,24 +1,36 @@
 import React from "react";
-import schoolBuilding from '../../assets/images/schoolBuilding.jpg'
+import { motion } from "framer-motion";
+import schoolBuilding from "../../assets/images/schoolBuilding.jpg";
 
 const AboutSection = () => {
   return (
     <section
       id="about-section"
-      className="w-full bg-white -translate-y-14 -mt-10 px-6 lg:px-20 flex flex-col lg:flex-row items-center gap-10"
+      className="w-full bg-white -translate-y-14 pt-20 -mt-10 px-6 lg:px-20 flex flex-col lg:flex-row items-center gap-10"
     >
       {/* LEFT SIDE IMAGE */}
-      <div className="w-full lg:w-1/2 scale-90 relative h-fit rounded-lg overflow-hidden shadow-lg">
+      <motion.div
+        className="w-full lg:w-1/2 scale-90 relative h-fit rounded-lg overflow-hidden shadow-lg"
+        initial={{ x: -80, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <img
-          src={schoolBuilding} 
+          src={schoolBuilding}
           alt="School Building"
           className="w-full h-full object-cover"
         />
-
-      </div>
+      </motion.div>
 
       {/* RIGHT SIDE CONTENT */}
-      <div className="w-full lg:w-1/2 text-center lg:text-left">
+      <motion.div
+        className="w-full lg:w-1/2 text-center lg:text-left"
+        initial={{ x: 80, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
           About Us
         </h2>
@@ -34,11 +46,7 @@ const AboutSection = () => {
           Malaysia, Philippines, Oman and Saudi Arabia, to meet the demands for
           quality education as well as to ensure a strong global presence.
         </p>
-
-        {/* <button className="mt-6 px-8 py-3 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700 transition">
-          LEARN MORE
-        </button> */}
-      </div>
+      </motion.div>
     </section>
   );
 };
