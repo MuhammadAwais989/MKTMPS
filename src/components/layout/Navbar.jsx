@@ -76,7 +76,7 @@ const Navbar = () => {
     <nav className="relative bg-transparent text-white">
       {/* Mobile menu button */}
       <button
-        className="md:hidden p-3 rounded-xl text-white hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 border border-transparent hover:border-blue-200"
+        className="lg:hidden p-3 rounded-xl text-white hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 border border-transparent hover:border-blue-200"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle menu"
       >
@@ -88,7 +88,7 @@ const Navbar = () => {
       </button>
 
       {/* Desktop Navigation */}
-      <div className="hidden md:flex items-center space-x-1">
+      <div className="hidden lg:flex items-center space-x-1">
         {navLinks.map((link, index) => (
           <div key={link.name} className="relative">
             {link.type === 'dropdown' ? (
@@ -215,7 +215,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="absolute top-full right-0 w-90 bg-white shadow-2xl rounded-2xl py-4 md:hidden z-50 border border-gray-200 animate-slideIn mt-2 max-h-[90vh] overflow-y-auto">
+        <div className="absolute top-full right-0 w-90 bg-white shadow-2xl rounded-2xl py-4 lg:hidden z-50 border border-gray-200 animate-slideIn mt-2 max-h-[90vh] overflow-y-auto">
           {navLinks.map((link) => (
             <div key={link.name} className="border-b border-gray-100 last:border-b-0">
               {link.type === 'dropdown' ? (

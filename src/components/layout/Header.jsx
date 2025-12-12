@@ -20,15 +20,15 @@ const Header = () => {
 
   return (
    <header
-  className={`sticky top-0 z-50 transition-all duration-500 ${
+  className={`sticky flex justify-between px-4 top-0 z-50 transition-all duration-500 ${
     scrolled
       ? 'bg-gray-700/40 backdrop-blur-md shadow-lg py-2' 
       : 'bg-white/30 backdrop-blur-sm py-4'
   }`}
 >
 
-      <div className="container mx-auto ">
-        <div className="flex justify-between items-center">
+      <div className="w-fit container">
+        <div className="flex justify-between items-center w-full">
           {/* Logo Section */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
@@ -45,9 +45,9 @@ const Header = () => {
             </div>
           </Link>
 
-          <Navbar />
         </div>
       </div>
+          <Navbar />
     </header>
   );
 };

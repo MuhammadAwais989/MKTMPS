@@ -280,7 +280,7 @@ const Hero = () => {
   return (
     <section 
       ref={heroRef}
-      className="relative -translate-y-22 pt-45 w-full h-screen max-sm:h-[90vh] overflow-hidden hero"
+      className="relative -translate-y-22 lg:pt-32 sm:pt-[420px] md:pt-[550px] max-sm:pt-70 w-full h-screen max-sm:h-[90vh] overflow-hidden hero"
     >
 
       {/* Background Video with Glow Effect */}
@@ -322,7 +322,7 @@ const Hero = () => {
               </h1>
 
               {/* School Name with Typewriter Effect */}
-              <h1 ref={schoolNameRef} className="h-44 text-4xl md:text-5xl lg:text-6xl font-black mb-3 min-h-[100px] lg:min-h-[120px] flex items-center justify-center lg:justify-start">
+              <h1 ref={schoolNameRef} className="sm:h-44 text-4xl md:text-5xl lg:text-5xl font-black mb-3 min-h-[100px] lg:min-h-[120px] flex items-center justify-center lg:justify-start">
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-300 via-white to-purple-300 drop-shadow-2xl font-bold typewriter-text leading-tight">
                   {displayText}
                   <span className="typing-cursor">|</span>
